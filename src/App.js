@@ -1,32 +1,18 @@
 import React, { Component } from "react";
-import Component2 from "./Component2";
-import Button from './Button';
+import Home from "./pages/home/Home";
+import "./template/assets/css/normalize.css";
+import "./template/assets/css/style.css";
+import "./template/assets/css/template.css";
+import Passo1 from "./pages/cadastro/passo1/Passo1";
+import Cadastro from "./pages/cadastro/Cadastro";
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      actualBtn: ''
+    render() {
+        return (
+            <>
+                {/* <Home /> */}
+                <Cadastro />
+            </>
+        )
     }
-  }
-
-  handleChange = (name) => {
-    this.setState({
-      actualBtn: name
-    })
-  }
-
-
-  render() {
-    console.log(this.state)
-    return (
-      <>
-        <Component2 name={this.state.actualBtn} />
-        <Component2 idade="24" />
-        <Component2 name="jesus" /> 
-        <Button change={this.handleChange} name="Clique no botão"></Button>
-      </>
-    )
-  }
 }
